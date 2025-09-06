@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Videos para la clase — Recursos</title>
+  <style>
+    /* ====== RESET LIGERO ====== */
+    :root{
+      --bg1:#0f172a; /* deep */
+      --bg2:#0f3460; /* blue */
+      --card:#0b1020cc;
+      --accent:#ff4d6d;
+      --muted: #cbd5e1;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--muted);
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    /* ====== CONTAINER ====== */
+    .wrap {
+      width: min(1200px, 96%);
+    }
+
+    header.site-head {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .logo {
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ff7a8a,#ffb199);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .site-title {
+      margin:0;
+      color: white;
+    }
+    .site-sub {
+      margin:4px 0 0 0;
+      color: #cbd5e1aa;
+      font-size:14px;
+    }
+
+    /* ====== GRID DE VIDEOS ====== */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(1,1fr);
+      gap:18px;
+    }
+
+    @media(min-width:700px){ .grid{ grid-template-columns: repeat(2,1fr);} }
+    @media(min-width:1100px){ .grid{ grid-template-columns: repeat(3,1fr);} }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:14px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      backdrop-filter: blur(4px);
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(2,6,23,0.7);
+    }
+
+    /* contenedor responsive para iframe (16:9) */
+    .video-wrap {
+      position:relative;
+      width:100%;
+      padding-top:56.25%; /* 16:9 ratio */
+      border-radius:10px;
+      overflow:hidden;
+      background:var(--glass);
+      margin-bottom:12px;
+    }
+    .video-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    h3.title {
+      margin:0 0 8px 0;
+      color: white;
+      font-size:16px;
+    }
+    p.desc {
+      margin:0 0 12px 0;
+      color: #cbd5e1aa;
+      font-size:13px;
+      line-height:1.3;
+    }
+
+    .controls {
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .left {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .tag {
+      font-size:12px;
+      color:#0b1220;
+      background: linear-gradient(90deg,#ffd6e0, #ffd8b0);
+      padding:6px 8px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .btn {
+      display:inline-block;
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:8px 10px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:13px;
+      transition: background .14s ease, color .14s ease, transform .12s ease;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,0.04);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg,var(--accent), #ff9a6a);
+      color:white;
+      border: none;
+    }
+    .btn.primary:hover { filter:brightness(.95); transform: translateY(-2px); }
+
+    /* Pie de la página */
+    footer {
+      margin-top:20px;
+      color:#9fb0c8;
+      font-size:13px;
+      text-align:center;
+      opacity:0.9;
+    }
+
+    /* Pequeños helpers */
+    .note{ font-size:13px; color:#a8c0d8; margin-bottom:10px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head" role="banner">
+      <div class="logo">🎬</div>
+      <div>
+        <h1 class="site-title">Videos para la clase</h1>
+        <div class="site-sub">Recursos visuales — muestra, pausa y comenta en vivo</div>
+      </div>
+    </header>
+
+    <p class="note">Abre cada video dentro de la tarjeta para reproducirlo. Usa los botones para abrir el video en YouTube en una pestaña nueva.</p>
+
+    <main class="grid" role="main">
+
+      <!-- CARD 1 -->
+      <article class="card" aria-labelledby="t1">
+        <div class="video-wrap" title="Video 1">
+          <!-- ID: 2rQukXuC_IU -->
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/2rQukXuC_IU"
+            title="Video 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3 id="t1" class="title">Short: (ID 2rQukXuC_IU)</h3>
+        <p class="desc">Un short de YouTube. Útil para muestras rápidas y comentarios puntuales.</p>
+        <div class="controls">
+          <div class="left"><span class="tag">Short</span></div>
+          <div>
+            <a class="btn" href="https://youtu.be/2rQukXuC_IU" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            <a class="btn primary" href="https://youtu.be/2rQukXuC_IU" target="_blank" rel="noopener noreferrer">Abrir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card" aria-labelledby="t2">
+        <div class="video-wrap" title="Video 2">
+          <!-- ID: wVeLg2PsVPg -->
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/wVeLg2PsVPg"
+            title="Video 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3 id="t2" class="title">Video completo (ID wVeLg2PsVPg)</h3>
+        <p class="desc">Video con explicación más larga — ideal para pausar y discutir conceptos con la clase.</p>
+        <div class="controls">
+          <div class="left"><span class="tag">Largo</span></div>
+          <div>
+            <a class="btn" href="https://www.youtube.com/watch?v=wVeLg2PsVPg" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            <a class="btn primary" href="https://www.youtube.com/watch?v=wVeLg2PsVPg" target="_blank" rel="noopener noreferrer">Abrir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card" aria-labelledby="t3">
+        <div class="video-wrap" title="Video 3">
+          <!-- ID: J7wz3Io36sE -->
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/J7wz3Io36sE"
+            title="Video 3"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3 id="t3" class="title">Short: (ID J7wz3Io36sE)</h3>
+        <p class="desc">Otro short para ilustrar un ejemplo rápido o mostrar un truco visual.</p>
+        <div class="controls">
+          <div class="left"><span class="tag">Short</span></div>
+          <div>
+            <a class="btn" href="https://youtu.be/J7wz3Io36sE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            <a class="btn primary" href="https://youtu.be/J7wz3Io36sE" target="_blank" rel="noopener noreferrer">Abrir</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="card" aria-labelledby="t4">
+        <div class="video-wrap" title="Video 4">
+          <!-- ID: -6sVrQv_vHE -->
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/-6sVrQv_vHE"
+            title="Video 4"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3 id="t4" class="title">Video (ID -6sVrQv_vHE)</h3>
+        <p class="desc">Video enlazado mediante youtu.be — igualmente embebible para reproducción en clase.</p>
+        <div class="controls">
+          <div class="left"><span class="tag">Largo/Short</span></div>
+          <div>
+            <a class="btn" href="https://youtu.be/-6sVrQv_vHE" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+            <a class="btn primary" href="https://youtu.be/-6sVrQv_vHE" target="_blank" rel="noopener noreferrer">Abrir</a>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+      Tip: usa el botón <strong>Abrir</strong> para llevar el video a pantalla completa en YouTube, o reproduce directo desde aquí. — Diseño pensado para presentación en aula.
+    </footer>
+  </div>
+</body>
+</html>

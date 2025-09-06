@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tablas en HTML y CSS</title>
+  <style>
+    h1 { text-align: center; }
+
+    table {
+      border-collapse: collapse;
+      margin: 15px 0;
+      width: 80%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    /* 2. Colores */
+    .tabla-colores th {
+      background: navy;
+      color: white;
+    }
+    .tabla-colores td {
+      background: #f0f8ff;
+    }
+
+    /* 3. Alineación */
+    .tabla-alineacion td {
+      text-align: center;
+    }
+    .tabla-alineacion th {
+      text-align: right;
+    }
+
+    /* 4. Bordes */
+    .tabla-bordes th, .tabla-bordes td {
+      border: 2px dashed red;
+    }
+
+    /* 5. Zebra stripes */
+    .tabla-zebra tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+
+    /* 6. Hover */
+    .tabla-hover tr:hover {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Guía de Tablas en HTML y CSS</h1>
+  <p>Este documento explica cómo crear tablas en HTML y cómo darles estilo con CSS.</p>
+  <hr>
+
+  <!-- 1. Estructura básica -->
+  <h2>🔑 1. Estructura básica de una tabla</h2>
+  <pre><code>&lt;table&gt;
+  &lt;tr&gt;   &lt;!-- fila --&gt;
+    &lt;th&gt;Encabezado&lt;/th&gt;   &lt;!-- celda de encabezado --&gt;
+    &lt;th&gt;Encabezado&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Dato&lt;/td&gt;         &lt;!-- celda normal --&gt;
+    &lt;td&gt;Dato&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+    </tr>
+    <tr>
+      <td>Ana</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>30</td>
+    </tr>
+  </table>
+
+  <!-- 2. Colores -->
+  <h2>🔑 2. Colores en tablas</h2>
+  <pre><code>.tabla-colores th {
+  background: navy;   /* Fondo azul marino */
+  color: white;       /* Texto blanco */
+}
+.tabla-colores td {
+  background: #f0f8ff; /* Azul muy claro */
+}</code></pre>
+
+  <table class="tabla-colores">
+    <tr>
+      <th>País</th>
+      <th>Capital</th>
+    </tr>
+    <tr>
+      <td>España</td>
+      <td>Madrid</td>
+    </tr>
+    <tr>
+      <td>México</td>
+      <td>Ciudad de México</td>
+    </tr>
+  </table>
+
+  <!-- 3. Alineación -->
+  <h2>🔑 3. Alineación de texto</h2>
+  <pre><code>.tabla-alineacion td {
+  text-align: center; /* Centrar el texto en las celdas normales */
+}
+.tabla-alineacion th {
+  text-align: right;  /* Alinear a la derecha en los encabezados */
+}</code></pre>
+
+  <table class="tabla-alineacion">
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <td>Pan</td>
+      <td>$1</td>
+    </tr>
+    <tr>
+      <td>Leche</td>
+      <td>$2</td>
+    </tr>
+  </table>
+
+  <!-- 4. Bordes -->
+  <h2>🔑 4. Bordes personalizados</h2>
+  <pre><code>.tabla-bordes th, .tabla-bordes td {
+  border: 2px dashed red; /* Bordes rojos y punteados */
+}</code></pre>
+
+  <table class="tabla-bordes">
+    <tr>
+      <th>Día</th>
+      <th>Clima</th>
+    </tr>
+    <tr>
+      <td>Lunes</td>
+      <td>Soleado</td>
+    </tr>
+    <tr>
+      <td>Martes</td>
+      <td>Lluvioso</td>
+    </tr>
+  </table>
+
+  <!-- 5. Zebra stripes -->
+  <h2>🔑 5. Filas alternas (zebra stripes)</h2>
+  <pre><code>.tabla-zebra tr:nth-child(even) {
+  background: #f2f2f2;
+}</code></pre>
+  <p>
+    Aquí usamos el <code>:nth-child(even)</code>, que selecciona las filas pares de la tabla (2, 4, 6...).  
+    Esto hace que las filas alternas tengan un color de fondo distinto, creando el efecto “cebra”.  
+    También existe <code>:nth-child(odd)</code> para las filas impares.
+  </p>
+
+  <table class="tabla-zebra">
+    <tr>
+      <th>Nombre</th>
+      <th>Puntaje</th>
+    </tr>
+    <tr>
+      <td>Lucía</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>Pedro</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>María</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>88</td>
+    </tr>
+  </table>
+
+  <!-- 6. Hover -->
+  <h2>🔑 6. Efecto hover en filas</h2>
+  <pre><code>.tabla-hover tr:hover {
+  background: yellow;
+}</code></pre>
+  <p>
+    El pseudoclase <code>:hover</code> se activa cuando pasas el cursor sobre un elemento.  
+    En este caso, aplicamos <code>background: yellow;</code> a la fila completa <code>&lt;tr&gt;</code>.  
+    Así, al pasar el mouse sobre cualquier fila, toda ella se resalta en amarillo.
+  </p>
+
+  <table class="tabla-hover">
+    <tr>
+      <th>Usuario</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>Juan</td>
+      <td>juan@example.com</td>
+    </tr>
+    <tr>
+      <td>Laura</td>
+      <td>laura@example.com</td>
+    </tr>
+    <tr>
+      <td>Pedro</td>
+      <td>pedro@example.com</td>
+    </tr>
+  </table>
+
+</body>
+</html>

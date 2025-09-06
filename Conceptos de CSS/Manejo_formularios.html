@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formularios en HTML y CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 350px;
+      background: #f9f9f9;
+    }
+
+    label {
+      display: block;          /* Pone cada etiqueta en su propia línea */
+      margin: 8px 0 4px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;             /* Que ocupen todo el ancho */
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      box-sizing: border-box;  /* Incluye padding en el ancho total */
+    }
+
+    button {
+      background: navy;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkred;     /* Cambia de color al pasar el ratón */
+    }
+
+    hr {
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 Guía de Formularios en HTML y CSS</h1>
+  <p>Los formularios permiten recopilar datos de los usuarios (como nombre, email, contraseñas o comentarios).</p>
+  <hr>
+
+  <!-- 1. Estructura básica -->
+  <h2>🔑 1. Estructura básica de un formulario</h2>
+  <pre><code>&lt;form action="procesar.php" method="POST"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre"&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p>
+    👉 <code>&lt;form&gt;</code> define el formulario.  
+    <code>action</code> indica a dónde se envían los datos,  
+    y <code>method</code> puede ser <code>GET</code> o <code>POST</code>.  
+  </p>
+
+  <!-- 2. Inputs básicos -->
+  <h2>🔑 2. Campos de entrada básicos</h2>
+  <pre><code>&lt;input type="text"&gt;       Texto corto  
+&lt;input type="email"&gt;      Correo electrónico  
+&lt;input type="password"&gt;   Contraseña  
+&lt;input type="number"&gt;     Números  
+&lt;input type="date"&gt;       Fecha</code></pre>
+
+  <form>
+    <label>Nombre:</label>
+    <input type="text" placeholder="Escribe tu nombre">
+
+    <label>Email:</label>
+    <input type="email" placeholder="ejemplo@mail.com">
+
+    <label>Contraseña:</label>
+    <input type="password" placeholder="••••••">
+
+    <label>Edad:</label>
+    <input type="number" min="1" max="100">
+
+    <label>Fecha de nacimiento:</label>
+    <input type="date">
+  </form>
+
+  <!-- 3. Área de texto -->
+  <h2>🔑 3. Área de texto (comentarios largos)</h2>
+  <pre><code>&lt;textarea rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+
+  <form>
+    <label>Comentarios:</label>
+    <textarea rows="4" placeholder="Escribe tu mensaje..."></textarea>
+  </form>
+
+  <!-- 4. Select y opciones -->
+  <h2>🔑 4. Listas desplegables (select)</h2>
+  <pre><code>&lt;select&gt;
+  &lt;option&gt;Opción 1&lt;/option&gt;
+  &lt;option&gt;Opción 2&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+  <form>
+    <label>País:</label>
+    <select>
+      <option>Colombia</option>
+      <option>México</option>
+      <option>Argentina</option>
+      <option>España</option>
+    </select>
+  </form>
+
+  <!-- 5. Radio y checkbox -->
+  <h2>🔑 5. Radio buttons y checkboxes</h2>
+  <pre><code>&lt;input type="radio" name="genero" value="M"&gt; Masculino  
+&lt;input type="radio" name="genero" value="F"&gt; Femenino  
+
+&lt;input type="checkbox" name="suscripcion"&gt; Acepto recibir noticias</code></pre>
+
+  <form>
+    <label>Género:</label>
+    <input type="radio" name="genero" value="M"> Masculino
+    <input type="radio" name="genero" value="F"> Femenino
+
+    <br><br>
+    <input type="checkbox" name="suscripcion"> Acepto recibir noticias
+  </form>
+
+  <!-- 6. Botones -->
+  <h2>🔑 6. Botones</h2>
+  <pre><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;  
+&lt;button type="reset"&gt;Limpiar&lt;/button&gt;</code></pre>
+
+  <form>
+    <label>Usuario:</label>
+    <input type="text">
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+  </form>
+
+</body>
+</html>

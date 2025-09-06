@@ -1,0 +1,148 @@
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="es"> <!-- Define el idioma principal del documento: español -->
+<head>
+  <meta charset="UTF-8"> <!-- Asegura que se muestren bien los acentos y caracteres especiales -->
+  <title>Guía básica de HTML</title> <!-- Título que aparece en la pestaña del navegador -->
+</head>
+<body> <!-- Aquí comienza el contenido visible de la página -->
+
+  <!-- Encabezado principal de la página -->
+  <h1>📘 Guía básica de etiquetas HTML</h1>
+
+  <!-- Párrafo de introducción -->
+  <p>Este documento muestra las etiquetas más comunes de HTML, con su descripción y un ejemplo práctico.</p>
+
+  <hr> <!-- Línea horizontal para separar secciones -->
+
+  <!-- ============================= -->
+  <!-- 1. ENCABEZADOS -->
+  <!-- ============================= -->
+  <h2>1. Encabezados: <code>&lt;h1&gt; ... &lt;h6&gt;</code></h2>
+  <p>Se usan para títulos y subtítulos. <code>h1</code> es el más grande, <code>h6</code> el más pequeño.</p>
+
+  <!-- Ejemplos de encabezados -->
+  <h1>Ejemplo h1</h1>
+  <h2>Ejemplo h2</h2>
+  <h3>Ejemplo h3</h3>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 2. PÁRRAFOS -->
+  <!-- ============================= -->
+  <h2>2. Párrafos: <code>&lt;p&gt;</code></h2>
+  <p>Se usa para agrupar texto en bloques legibles.</p>
+
+  <!-- Ejemplo de párrafo -->
+  <p>José Arcadio Buendía, que era el hombre más emprendedor que se vería jamás en la aldea, había dispuesto de tal modo la posición de las casas, que desde todas podía llegarse al río y abastecerse de agua con igual esfuerzo, y trazó las calles con tan buen sentido que ninguna casa recibía más sol que otra a la hora del calor. En pocos años, Macondo fue una aldea más ordenada y laboriosa que cualquiera de las conocidas hasta entonces por sus trescientos habitantes. Era en verdad una aldea feliz, donde nadie era mayor de treinta años y donde nadie había muerto.</p>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 3. ENLACES -->
+  <!-- ============================= -->
+  <h2>3. Enlaces: <code>&lt;a&gt;</code></h2>
+  <p>Sirven para dirigir a otras páginas o secciones.</p>
+
+  <!-- Ejemplo de enlace que abre en una nueva pestaña -->
+  <p>Ejemplo: Ir a <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN HTML</a></p>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 4. IMÁGENES -->
+  <!-- ============================= -->
+  <h2>4. Imágenes: <code>&lt;img&gt;</code></h2>
+  <p>Muestra una imagen en la página. Necesita el atributo <code>src</code> (fuente) y <code>alt</code> (texto alternativo).</p>
+
+  <!-- Ejemplo de imagen con ancho definido -->
+  <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Spiderman50.jpg" alt="Spider-Man clásico" width="150">
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 5. LISTAS -->
+  <!-- ============================= -->
+  <h2>5. Listas: <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> y <code>&lt;li&gt;</code></h2>
+  <p>Se usan para listas de elementos. <code>ul</code> es no ordenada (viñetas), <code>ol</code> es ordenada (números), y <code>li</code> define cada ítem.</p>
+  
+  <!-- Lista no ordenada -->
+  <p>Ejemplo de lista no ordenada:</p>
+  <ul>
+    <li>Manzana</li>
+    <li>Pera</li>
+    <li>Banana</li>
+  </ul>
+
+  <!-- Lista ordenada -->
+  <p>Ejemplo de lista ordenada:</p>
+  <ol>
+    <li>Primer paso</li>
+    <li>Segundo paso</li>
+    <li>Tercer paso</li>
+  </ol>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 6. TABLAS -->
+  <!-- ============================= -->
+  <h2>6. Tablas: <code>&lt;table&gt;</code></h2>
+  <p>Sirven para organizar datos en filas y columnas. Se usan con <code>&lt;tr&gt;</code> (fila), <code>&lt;th&gt;</code> (encabezado), <code>&lt;td&gt;</code> (celda).</p>
+  
+  <!-- Ejemplo de tabla con borde -->
+  <table border="1">
+    <tr> <!-- Fila -->
+      <th>Nombre</th> <!-- Celda de encabezado -->
+      <th>Habilidad</th>
+    </tr>
+    <tr>
+      <td>Spider-Man</td> <!-- Celda normal -->
+      <td>Trepar muros</td>
+    </tr>
+    <tr>
+      <td>Iron Man</td>
+      <td>Armadura tecnológica</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 7. FORMULARIOS -->
+  <!-- ============================= -->
+  <h2>7. Formularios: <code>&lt;form&gt;</code></h2>
+  <p>Permiten que el usuario ingrese datos. Usan etiquetas como <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code>.</p>
+  
+  <!-- Ejemplo de formulario sencillo -->
+  <form>
+    <p><label>Nombre: <input type="text" name="nombre"></label></p>
+    <p><label>Email: <input type="email" name="email"></label></p>
+    <p><label>Mensaje:<br><textarea name="mensaje" rows="4" cols="30"></textarea></label></p>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <hr>
+
+  <!-- ============================= -->
+  <!-- 8. CONTENEDORES -->
+  <!-- ============================= -->
+  <h2>8. Contenedores: <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code></h2>
+  <p><code>&lt;div&gt;</code> se usa para agrupar bloques de contenido. <code>&lt;span&gt;</code> es para agrupar texto en línea.</p>
+  
+  <!-- Ejemplo de div -->
+  <div>
+    <p>Esto está dentro de un <code>div</code>.</p>
+  </div>
+  
+  <!-- Ejemplo de span (este tiene estilo inline solo para demostrar) -->
+  <p>Este texto tiene una <span style="color:red">palabra en rojo</span> gracias a <code>span</code>.</p>
+
+  <hr>
+
+  <!-- Conclusión -->
+  <h2>✅ Conclusión</h2>
+  <p>Con estas etiquetas (<code>h1-h6</code>, <code>p</code>, <code>a</code>, <code>img</code>, <code>ul/ol/li</code>, <code>table</code>, <code>form</code>, <code>div</code>, <code>span</code>) puedes construir la mayoría de páginas web básicas.</p>
+
+</body>
+</html>

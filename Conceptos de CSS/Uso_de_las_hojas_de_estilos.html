@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Básico - Ejemplos en vivo</title>
+  <style>
+    /* ================== ESTILOS DEMO ================== */
+    h1 { text-align: center; }
+
+    /* Selectores */
+    p { color: black; }
+    .destacado { color: orange; }
+    #principal { background: yellow; }
+    header h1 { color: white; background: black; padding: 5px; }
+
+    /* Colores y fondos */
+    .color-texto { color: red; }
+    .color-fondo { background-color: black; color: white; padding: 5px; }
+
+    /* Texto */
+    .texto {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Modelo de caja */
+    .caja {
+      border: 2px solid black;
+      padding: 10px;
+      margin: 20px;
+      background: lightgray;
+    }
+
+    /* Tamaños */
+    .tamano {
+      width: 300px;
+      height: 100px;
+      background: lightblue;
+      text-align: center;
+      line-height: 100px; /* centra el texto verticalmente */
+    }
+
+    /* Bordes */
+    .bordes {
+      border: 2px dashed red;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+    }
+
+    /* Flujo */
+    .bloque {
+      background: lightgreen;
+      margin: 5px;
+    }
+    .en-linea {
+      display: inline;
+      background: orange;
+      padding: 5px;
+      margin: 5px;
+    }
+    .inline-block {
+      display: inline-block;
+      background: pink;
+      padding: 10px;
+      margin: 5px;
+      width: 120px;
+      text-align: center;
+    }
+
+    /* Cascada */
+    p { color: gray; }          /* Regla más débil */
+    .importante { color: blue; }
+    #intro { color: red; }      /* Gana por especificidad */
+  </style>
+</head>
+<body>
+
+  <h1>🎨 Guía de CSS Básico con ejemplos</h1>
+  <p>Este documento explica los fundamentos de CSS y muestra ejemplos en vivo.</p>
+  <hr>
+
+  <!-- 1. Qué es CSS -->
+  <h2>🔑 1. ¿Qué es CSS?</h2>
+  <p><strong>CSS</strong> = Cascading Style Sheets = “Hojas de estilo en cascada”.</p>
+  <p>Sirve para dar apariencia a los elementos HTML: colores, tamaños, posiciones, márgenes, etc.</p>
+  <p>Se llama “en cascada” porque los estilos se aplican de arriba hacia abajo y el más específico gana.</p>
+
+  <!-- 2. Sintaxis -->
+  <h2>🔑 2. Sintaxis básica</h2>
+  <pre><code>selector {
+  propiedad: valor;
+}
+
+h1 {
+  color: red;
+  font-size: 30px;
+}</code></pre>
+  <p style="color:red; font-size:30px;">Ejemplo en vivo: este <code>&lt;h1&gt;</code> sería rojo y grande</p>
+
+  <!-- 3. Selectores -->
+  <h2>🔑 3. Selectores</h2>
+  <p><strong>Por etiqueta:</strong></p>
+  <pre><code>p { color: blue; }</code></pre>
+  <p>Ejemplo en vivo: <span style="color:blue;">Todos los párrafos serían azules</span></p>
+
+  <p><strong>Por clase:</strong></p>
+  <pre><code>.destacado { color: orange; }</code></pre>
+  <p class="destacado">Ejemplo en vivo: Este párrafo tiene class="destacado"</p>
+
+  <p><strong>Por id:</strong></p>
+  <pre><code>#principal { background: yellow; }</code></pre>
+  <p id="principal">Ejemplo en vivo: Este párrafo tiene id="principal"</p>
+
+  <p><strong>Por jerarquía:</strong></p>
+  <pre><code>header h1 { color: white; }</code></pre>
+  <header><h1>Ejemplo en vivo: H1 dentro de header</h1></header>
+
+  <!-- 4. Propiedades comunes -->
+  <h2>🔑 4. Propiedades más comunes</h2>
+
+  <h3>🎨 Colores y fondos</h3>
+  <pre><code>color: red;
+background-color: black;</code></pre>
+  <p class="color-texto">Texto rojo</p>
+  <p class="color-fondo">Texto blanco sobre fondo negro</p>
+
+  <h3>📝 Texto</h3>
+  <pre><code>font-family: Arial, sans-serif;
+font-size: 18px;
+font-weight: bold;
+text-align: center;</code></pre>
+  <p class="texto">Texto estilizado con fuente, tamaño y centrado</p>
+
+  <h3>📦 Modelo de caja</h3>
+  <pre><code>div {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px;
+}</code></pre>
+  <div class="caja">Soy una caja con margin, border y padding</div>
+
+  <h3>📐 Tamaños</h3>
+  <pre><code>width: 300px;
+height: 200px;</code></pre>
+  <div class="tamano">Caja con ancho y alto</div>
+
+  <h3>🔲 Bordes</h3>
+  <pre><code>border: 2px dashed red;
+border-radius: 10px;</code></pre>
+  <div class="bordes">Caja con borde punteado y esquinas redondeadas</div>
+
+  <!-- 5. Flujo -->
+  <h2>🔑 5. El flujo de la página</h2>
+  <p>Por defecto:</p>
+  <p><strong>Block</strong> (ocupan todo el ancho y se apilan). Ej: &lt;div&gt;, &lt;h1&gt;, &lt;p&gt;.</p>
+  <div class="bloque">Bloque 1</div>
+  <div class="bloque">Bloque 2</div>
+
+  <p><strong>Inline</strong> (se ponen en línea como texto). Ej: &lt;span&gt;, &lt;a&gt;.</p>
+  <div class="en-linea">Caja A</div>
+  <div class="en-linea">Caja B</div>
+
+  <p><strong>Inline-block</strong> (mezcla: se alinean pero permiten ancho/alto).</p>
+  <div class="inline-block">Caja X</div>
+  <div class="inline-block">Caja Y</div>
+
+  <!-- 6. Cascada -->
+  <h2>🔑 6. Cómo funciona “la cascada”</h2>
+  <p>El navegador aplica estilos por defecto. Tus reglas los sobreescriben.  
+  Si compiten, gana la más específica: ID > Clase > Etiqueta.  
+  Si hay empate, gana la última regla escrita.</p>
+
+  <h3>Ejemplo</h3>
+  <pre><code>&lt;p id="intro" class="destacado"&gt;Hola, soy Spider-Man&lt;/p&gt;
+
+p { color: black; }
+.destacado { color: blue; }
+#intro { color: red; }</code></pre>
+
+  <p id="intro" class="destacado">Hola, soy Spider-Man (este se ve rojo por la cascada)</p>
+
+</body>
+</html>
