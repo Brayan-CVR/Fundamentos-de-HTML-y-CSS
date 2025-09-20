@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interacción JS + HTML</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#0f3460;
+      --card:#0b1020cc;
+      --accent:#ff4d6d;
+      --muted: #cbd5e1;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body {
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:var(--muted);
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 60%);
+      -webkit-font-smoothing:antialiased;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap { width:min(1100px,96%); }
+
+    header.site-head {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .logo {
+      width:64px;height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#7aaaff,#91e4ff);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:22px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    .site-title { margin:0; color:white; }
+    .site-sub { margin:4px 0 0 0; color:#cbd5e1aa; font-size:14px; }
+
+    .note{ font-size:13px; color:#a8c0d8; margin-bottom:20px; }
+
+    /* ====== BLOQUES DE EJERCICIO ====== */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      backdrop-filter: blur(4px);
+      margin-bottom:20px;
+    }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(2,6,23,0.65); }
+
+    h3.title { margin:0 0 8px 0; color:white; font-size:18px; }
+    p.desc { margin:0 0 12px 0; color:#cbd5e1cc; font-size:14px; line-height:1.4; }
+
+    textarea.code {
+      width:100%;
+      min-height:120px;
+      background:#0b1020cc;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:10px;
+      padding:12px;
+      font-family:monospace;
+      font-size:14px;
+      color:#e2e8f0;
+      resize:none;
+      overflow:hidden;
+      margin: 10px;
+    }
+    .btn {
+      background: linear-gradient(90deg,var(--accent), #ff9a6a);
+      color:white; border:none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:14px;
+      cursor:pointer;
+      margin-top:10px;
+      transition:filter .15s ease, transform .12s ease;
+    }
+    .btn:hover{ filter:brightness(.95); transform:translateY(-2px); }
+
+    .result, .output {
+      margin-top:10px;
+      background:#0b1220;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:8px;
+      padding:10px;
+      font-family:monospace;
+      font-size:14px;
+      color:#a8ffae;
+      white-space:pre-wrap;
+      min-height:30px;
+    }
+
+    input[type="text"], input[type="number"] {
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #334155;
+      margin:5px 0;
+      width:100%;
+      font-size:14px;
+      background:#0b1220;
+      color:#e2e8f0;
+    }
+
+    footer {
+      margin-top:30px;
+      color:#9fb0c8;
+      font-size:13px;
+      text-align:center;
+      opacity:0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head">
+      <div class="logo">JS</div>
+      <div>
+        <h1 class="site-title">Interacción JavaScript + HTML</h1>
+        <div class="site-sub">Ejemplos prácticos de integración</div>
+      </div>
+    </header>
+
+    <p class="note">Experimenta cómo leer y manipular elementos HTML con JavaScript en tiempo real.</p>
+
+    <!-- Ejemplo 1 -->
+    <article class="card">
+      <h3 class="title">➕ Sumar dos números</h3>
+      <p class="desc">Ingresa dos valores y muéstralos sumados:</p>
+      <input type="number" id="num1" placeholder="Número 1">
+      <input type="number" id="num2" placeholder="Número 2">
+      <button class="btn" onclick="sumar()">Calcular suma</button>
+      <div class="result" id="resultadoSuma"></div>
+      <textarea class="code" readonly>function sumar() {
+  let a = document.getElementById("num1").value;
+  let b = document.getElementById("num2").value;
+  let suma = Number(a) + Number(b);
+  document.getElementById("resultadoSuma").innerText = "Resultado: " + suma;
+}</textarea>
+    </article>
+
+    <!-- Ejemplo 2 -->
+    <article class="card">
+      <h3 class="title">✍ Cambiar texto dinámicamente</h3>
+      <p class="desc">Un botón reemplaza el contenido de un párrafo.</p>
+      <p id="texto">Este texto cambiará...</p>
+      <button class="btn" onclick="cambiarTexto()">Cambiar Texto</button>
+      <textarea class="code" readonly>function cambiarTexto() {
+  document.getElementById("texto").innerText = "¡Texto cambiado con JavaScript!";
+}</textarea>
+    </article>
+
+    <!-- Ejemplo 3 -->
+    <article class="card">
+      <h3 class="title">👀 Mostrar / Ocultar un elemento</h3>
+      <p class="desc">Al hacer clic, alterna la visibilidad de la caja.</p>
+      <div id="caja" class="result">Soy una caja de ejemplo</div>
+      <button class="btn" onclick="toggleCaja()">Mostrar/Ocultar</button>
+      <textarea class="code" readonly>function toggleCaja() {
+  let caja = document.getElementById("caja");
+  if (caja.style.display === "none") {
+    caja.style.display = "block";
+  } else {
+    caja.style.display = "none";
+  }
+}</textarea>
+    </article>
+
+    <!-- Ejemplo 4 -->
+    <article class="card">
+      <h3 class="title">💾 Guardar en LocalStorage</h3>
+      <p class="desc">Escribe un dato, guárdalo y recupéralo con JavaScript.</p>
+      <input type="text" id="dato" placeholder="Escribe algo...">
+      <button class="btn" onclick="guardar()">Guardar</button>
+      <button class="btn" onclick="recuperar()">Recuperar</button>
+      <div class="result" id="resultadoStorage"></div>
+      <textarea class="code" readonly>function guardar() {
+  let valor = document.getElementById("dato").value;
+  localStorage.setItem("miDato", valor);
+}
+function recuperar() {
+  let dato = localStorage.getItem("miDato");
+  document.getElementById("resultadoStorage").innerText = "Guardado: " + dato;
+}</textarea>
+    </article>
+
+    <footer>✨ Proyecto interactivo — Ejemplos de integración JavaScript + HTML ✨</footer>
+  </div>
+
+  <script>
+    // Autoajuste de textareas
+    document.querySelectorAll("textarea.code").forEach(area => {
+      const resize = () => {
+        area.style.height = "auto";
+        area.style.height = area.scrollHeight + "px";
+      };
+      area.addEventListener("input", resize);
+      resize();
+    });
+
+    // Funciones de ejemplos
+    function sumar() {
+      let a = document.getElementById("num1").value;
+      let b = document.getElementById("num2").value;
+      let suma = Number(a) + Number(b);
+      document.getElementById("resultadoSuma").innerText = "Resultado: " + suma;
+    }
+
+    function cambiarTexto() {
+      document.getElementById("texto").innerText = "¡Texto cambiado con JavaScript!";
+    }
+
+    function toggleCaja() {
+      let caja = document.getElementById("caja");
+      if (caja.style.display === "none") {
+        caja.style.display = "block";
+      } else {
+        caja.style.display = "none";
+      }
+    }
+
+    function guardar() {
+      let valor = document.getElementById("dato").value;
+      localStorage.setItem("miDato", valor);
+    }
+
+    function recuperar() {
+      let dato = localStorage.getItem("miDato");
+      document.getElementById("resultadoStorage").innerText = "Guardado: " + dato;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicios de JavaScript — Clase</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#0f3460;
+      --card:#0b1020cc;
+      --accent:#ff4d6d;
+      --muted: #cbd5e1;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body {
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:var(--muted);
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 60%);
+      -webkit-font-smoothing:antialiased;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap { width:min(1100px,96%); }
+
+    header.site-head {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .logo {
+      width:64px;height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ff7a8a,#ffb199);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:22px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    .site-title { margin:0; color:white; }
+    .site-sub { margin:4px 0 0 0; color:#cbd5e1aa; font-size:14px; }
+
+    .note{ font-size:13px; color:#a8c0d8; margin-bottom:20px; }
+
+    /* ====== BLOQUES DE EJERCICIO ====== */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      backdrop-filter: blur(4px);
+      margin-bottom:20px;
+    }
+    .card:hover{ transform:translateY(-4px); box-shadow:0 16px 36px rgba(2,6,23,0.65); }
+
+    h3.title { margin:0 0 8px 0; color:white; font-size:18px; }
+    p.desc { margin:0 0 12px 0; color:#cbd5e1cc; font-size:14px; line-height:1.4; }
+
+    textarea.code {
+    width:100%;
+    min-height:140px;
+    background:#0b1020cc;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:10px;
+    padding:12px;
+    font-family:monospace;
+    font-size:14px;
+    color:#e2e8f0;
+    resize:none; /* 👈 desactivamos el resize manual vertical */
+    overflow:hidden; /* 👈 ocultamos scroll interno */
+    }
+    .btn {
+      background: linear-gradient(90deg,var(--accent), #ff9a6a);
+      color:white; border:none;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:14px;
+      cursor:pointer;
+      margin-top:10px;
+      transition:filter .15s ease, transform .12s ease;
+    }
+    .btn:hover{ filter:brightness(.95); transform:translateY(-2px); }
+
+    .output {
+      margin-top:10px;
+      background:#0b1220;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:8px;
+      padding:10px;
+      font-family:monospace;
+      font-size:14px;
+      color:#a8ffae;
+      white-space:pre-wrap;
+      min-height:40px;
+    }
+
+    footer {
+      margin-top:30px;
+      color:#9fb0c8;
+      font-size:13px;
+      text-align:center;
+      opacity:0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head">
+      <div class="logo">JS</div>
+      <div>
+        <h1 class="site-title">Ejercicios de JavaScript</h1>
+        <div class="site-sub">Fundamentos prácticos para la clase</div>
+      </div>
+    </header>
+
+    <p class="note">Copia, edita y ejecuta el código directamente aquí. La salida aparecerá debajo de cada ejercicio.</p>
+
+    <!-- EJERCICIO 1 -->
+    <article class="card">
+      <h3 class="title">1. Variables y tipos de datos</h3>
+      <p class="desc">Declara variables con <code>let</code> y <code>const</code> y muestra sus valores.</p>
+      <textarea class="code">let nombre = "Ana";
+let edad = 25;
+let estudiante = true;
+
+console.log("Nombre:", nombre);
+console.log("Edad:", edad);
+console.log("¿Es estudiante?", estudiante);</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 2 -->
+    <article class="card">
+      <h3 class="title">2. Operaciones aritméticas</h3>
+      <p class="desc">Realiza operaciones matemáticas básicas.</p>
+      <textarea class="code">let a = 10;
+let b = 3;
+
+console.log("Suma:", a + b);
+console.log("Resta:", a - b);
+console.log("Multiplicación:", a * b);
+console.log("División:", a / b);
+console.log("Módulo:", a % b);</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 3 -->
+    <article class="card">
+      <h3 class="title">3. Condicional if/else</h3>
+      <p class="desc">Decide qué instrucción ejecutar según una condición.</p>
+      <textarea class="code">let edad = 18;
+
+if (edad >= 18) {
+  console.log("Eres mayor de edad.");
+} else {
+  console.log("Eres menor de edad.");
+}</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 4 -->
+    <article class="card">
+      <h3 class="title">4. Condicional switch</h3>
+      <p class="desc">Ejecuta diferentes bloques de código según el valor.</p>
+      <textarea class="code">let dia = "martes";
+
+switch (dia) {
+  case "lunes":
+    console.log("Inicio de semana");
+    break;
+  case "martes":
+    console.log("Segundo día de la semana");
+    break;
+  case "viernes":
+    console.log("¡Casi fin de semana!");
+    break;
+  default:
+    console.log("Día cualquiera");
+}</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 5 -->
+    <article class="card">
+      <h3 class="title">5. Ciclo for</h3>
+      <p class="desc">Repite instrucciones un número definido de veces.</p>
+      <textarea class="code">for (let i = 1; i <= 5; i++) {
+  console.log("Número:", i);
+}</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 6 -->
+    <article class="card">
+      <h3 class="title">6. Ciclo while</h3>
+      <p class="desc">Repite mientras se cumpla una condición.</p>
+      <textarea class="code">let contador = 1;
+
+while (contador <= 3) {
+  console.log("Iteración:", contador);
+  contador++;
+}</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 7 -->
+    <article class="card">
+      <h3 class="title">7. Arreglos</h3>
+      <p class="desc">Crea un arreglo y recórrelo.</p>
+      <textarea class="code">let frutas = ["manzana", "banana", "naranja"];
+
+console.log("Primera fruta:", frutas[0]);
+
+for (let i = 0; i < frutas.length; i++) {
+  console.log("Fruta:", frutas[i]);
+}</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 8 -->
+    <article class="card">
+      <h3 class="title">8. Objetos</h3>
+      <p class="desc">Define un objeto y accede a sus propiedades.</p>
+      <textarea class="code">let persona = {
+  nombre: "Carlos",
+  edad: 30,
+  profesion: "Ingeniero"
+};
+
+console.log("Nombre:", persona.nombre);
+console.log("Edad:", persona.edad);
+console.log("Profesión:", persona.profesion);</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 9 -->
+    <article class="card">
+      <h3 class="title">9. Funciones</h3>
+      <p class="desc">Crea funciones que reciben parámetros y retornan valores.</p>
+      <textarea class="code">function saludar(nombre) {
+  return "Hola, " + nombre + "!";
+}
+
+console.log(saludar("Lucía"));
+console.log(saludar("Pedro"));</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <!-- EJERCICIO 10 -->
+    <article class="card">
+      <h3 class="title">10. Eventos en el navegador</h3>
+      <p class="desc">Ejecuta código cuando el usuario interactúa con la página.</p>
+      <textarea class="code">alert('¡Hola desde el botón!')</textarea>
+      <button class="btn">▶ Ejecutar</button>
+      <div class="output"></div>
+    </article>
+
+    <footer>✨ Proyecto de ejercicios interactivos — Clase de JavaScript ✨</footer>
+  </div>
+
+  <script>
+  document.querySelectorAll(".card").forEach(card => {
+    const btn = card.querySelector(".btn");
+    const textarea = card.querySelector(".code");
+    const output = card.querySelector(".output");
+    btn.addEventListener("click", () => {
+      output.textContent = "";
+      const originalLog = console.log;
+      console.log = (...args) => {
+        output.textContent += args.join(" ") + "\n"; // 👈 salto real
+        originalLog(...args);
+      };
+      try {
+        new Function(textarea.value)();
+      } catch (err) {
+        output.textContent += "Error: " + err.message + "\n";
+      }
+      console.log = originalLog;
+    });
+  });
+    // Auto-ajuste dinámico de altura en cada textarea
+    document.querySelectorAll("textarea.code").forEach(area => {
+    const resize = () => {
+        area.style.height = "auto"; // reset
+        area.style.height = area.scrollHeight + "px"; // ajusta a contenido
+    };
+    area.addEventListener("input", resize);
+    resize(); // ajustar al cargar
+    });
+</script>
+
+</body>
+</html>

@@ -1,67 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Clase HTML & CSS</title>
-  <link rel="stylesheet" href="Styles/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proyecto Clase HTML, CSS & JavaScript</title>
+  <style>
+    /* ====== RESET LIGERO ====== */
+    :root{
+      --bg1:#0f172a; /* fondo oscuro profundo */
+      --bg2:#0f3460; /* azul */
+      --card:#0b1020cc;
+      --accent:#ff4d6d;
+      --muted:#cbd5e1;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:var(--muted);
+      background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    /* ====== CONTAINER ====== */
+    .wrap {
+      width: min(1200px, 96%);
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      position: relative;
+      border-radius:16px;
+      overflow:hidden;
+      min-height:60vh;
+      background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 12px 35px rgba(0,0,0,0.6);
+      margin-bottom:40px;
+    }
+    .overlay {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+    }
+    .hero-content {
+      position:relative;
+      z-index:1;
+      text-align:center;
+      color:white;
+      padding:30px;
+    }
+    .hero h1 {
+      font-size:2.8rem;
+      margin-bottom:15px;
+    }
+    .hero p {
+      font-size:1.2rem;
+      margin-bottom:25px;
+      color:#f1f5f9;
+    }
+    .btn {
+      display:inline-block;
+      background: linear-gradient(90deg,var(--accent), #ff9a6a);
+      color:white;
+      padding:12px 24px;
+      border-radius:30px;
+      font-weight:600;
+      text-decoration:none;
+      transition: filter .18s ease, transform .18s ease;
+    }
+    .btn:hover {
+      filter:brightness(.95);
+      transform:translateY(-2px);
+    }
+
+    /* ====== ABOUT ====== */
+    .about {
+      text-align:center;
+      margin-bottom:50px;
+    }
+    .about h2 {
+      color:white;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+    .about p {
+      color:#cbd5e1cc;
+      font-size:1.05rem;
+      max-width:800px;
+      margin:0 auto;
+    }
+
+    /* ====== PROYECTOS ====== */
+    .projects h2 {
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:30px;
+      color:white;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:20px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter:blur(4px);
+      transition: transform .18s ease, box-shadow .18s ease;
+      text-align:center;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(2,6,23,0.7);
+    }
+    .card h3 {
+      margin:0 0 10px;
+      color:white;
+    }
+    .card p {
+      margin:0 0 18px;
+      font-size:0.95rem;
+      color:#cbd5e1aa;
+    }
+    .btn-small {
+      display:inline-block;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.08);
+      padding:8px 14px;
+      border-radius:20px;
+      color:var(--muted);
+      font-size:0.9rem;
+      font-weight:600;
+      text-decoration:none;
+      transition: background .14s ease, color .14s ease, transform .14s ease;
+    }
+    .btn-small:hover {
+      background:rgba(255,255,255,0.05);
+      color:white;
+      transform:translateY(-2px);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      margin-top:40px;
+      text-align:center;
+      color:#9fb0c8;
+      font-size:0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header principal -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Prueba de actualizacion</h1>
-      <p>Explora ejemplos prácticos de HTML y CSS creados durante la sesión</p>
-      <a href="#proyectos" class="btn">Ver proyectos</a>
-    </div>
-  </header>
+  <div class="wrap">
+    <!-- Header principal -->
+    <header class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Bienvenidos al Proyecto de Clase</h1>
+        <p>Explora ejemplos prácticos de HTML, CSS y JavaScript creados durante la sesión</p>
+        <a href="#proyectos" class="btn">Ver proyectos</a>
+      </div>
+    </header>
 
-  <!-- Sección sobre -->
-  <section class="about">
-    <h2>¿De qué trata este proyecto?</h2>
-    <p>
-      Esta web recopila ejercicios y demostraciones de HTML y CSS 
-      explicados en clase. Aquí podrás encontrar ejemplos de etiquetas, 
-      tablas, formularios, estilos y mucho más.
-    </p>
-  </section>
+    <!-- Sección sobre -->
+    <section class="about">
+      <h2>¿De qué trata este proyecto?</h2>
+      <p>
+        Esta web recopila ejercicios y demostraciones de HTML, CSS y ahora también de JavaScript. 
+        Aquí podrás encontrar ejemplos de etiquetas, tablas, formularios, estilos, interactividad y mucho más.
+      </p>
+    </section>
 
-  <!-- Galería de proyectos -->
-  <section id="proyectos" class="projects">
-    <h2>Ejemplos destacados</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>📑 HTML básico</h3>
-        <p>Explicación de etiquetas esenciales.</p>
-        <a href="Conceptos_HTML/Etiquetas_basicas.html" class="btn-small">Ver más</a>
+    <!-- Galería de proyectos -->
+    <section id="proyectos" class="projects">
+      <h2>Ejemplos destacados</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📑 HTML básico</h3>
+          <p>Explicación de etiquetas esenciales.</p>
+          <a href="Conceptos_HTML/Etiquetas_basicas.html" class="btn-small">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>🎨 CSS básico</h3>
+          <p>Colores, fuentes, cajas y el modelo de caja.</p>
+          <a href="Conceptos de CSS/Uso_de_las_hojas_de_estilos.html" class="btn-small">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>📊 Tablas</h3>
+          <p>Cómo estructurar y dar estilo a tablas.</p>
+          <a href="Conceptos de CSS/Manejo_de_tablas.html" class="btn-small">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>📝 Formularios</h3>
+          <p>Creación de formularios básicos con HTML.</p>
+          <a href="Conceptos de CSS/Manejo_formularios.html" class="btn-small">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>🎬 Videos</h3>
+          <p>Ejemplo de página con videos de YouTube.</p>
+          <a href="Videos interesantes/Videos.html" class="btn-small">Ver más</a>
+        </div>
+        <!-- Nueva sección de JavaScript -->
+        <div class="card">
+          <h3>⚡ JavaScript básico</h3>
+          <p>Aprende a dar interactividad con alertas, botones y eventos.</p>
+          <a href="Ejercicios Javascript/Introduccion_JS.html" class="btn-small">Ver más</a>
+        </div>
+        <div class="card">
+          <h3>🧩 JavaScript + HTML</h3>
+          <p>Ejemplos prácticos conectando entradas y elementos HTML.</p>
+          <a href="Ejercicios Javascript/JS_HTML_interaccion.html" class="btn-small">Ver más</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>🎨 CSS básico</h3>
-        <p>Colores, fuentes, cajas y el modelo de caja.</p>
-        <a href="Conceptos de CSS/Uso_de_las_hojas_de_estilos.html" class="btn-small">Ver más</a>
-      </div>
-      <div class="card">
-        <h3>📊 Tablas</h3>
-        <p>Cómo estructurar y dar estilo a tablas.</p>
-        <a href="Conceptos de CSS/Manejo_de_tablas.html" class="btn-small">Ver más</a>
-      </div>
-      <div class="card">
-        <h3>📝 Formularios</h3>
-        <p>Creación de formularios básicos con HTML.</p>
-        <a href="Conceptos de CSS/Manejo_formularios.html" class="btn-small">Ver más</a>
-      </div>
-      <div class="card">
-        <h3>🎬 Videos</h3>
-        <p>Ejemplo de página con videos de YouTube.</p>
-        <a href="Videos interesantes/Videos.html" class="btn-small">Ver más</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>✨ Proyecto para clase de HTML & CSS — GitHub Pages ✨</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>✨ Proyecto para clase de HTML, CSS & JavaScript — GitHub Pages ✨</p>
+    </footer>
+  </div>
 </body>
 </html>
